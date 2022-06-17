@@ -1,14 +1,12 @@
-function naoClique() {
-    alert("Por favor, clique no outro botão!");
+function cliqueAqui() {
+    alert("Obrigado por clicar aqui!");
 }
 
-function clique() {
-    alert("Isso aí! Parabéns!");
+function naoCliqueAqui() {
+    alert("Não é para você clicar aqui! Clique no outro botão!");
 }
 
-function exibirOla() {
-    const nome = document.getElementById('txtNome').value;
-    const saida = document.getElementById('resposta-pri');
-    saida.style.display = "block";
-    saida.innerHTML = `<p>Olá, ${nome}! Seja bem-vindo(a)!`;
+function ola() {
+    const nome = document.getElementById("txtNome").value;
+    alert("Olá, " + nome);
 }
