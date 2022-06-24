@@ -25,3 +25,20 @@ function calcularImposto() {
     resultado.innerHTML = frase;
     resultado.style.display = "block";
 }
+
+function parOuImpar() {
+    const numero = document.getElementById("txtNumero").value;
+    var frase;
+
+    numero % 2 == 0 ? frase = "O número é par!" : frase = "O número é ímpar!";
+
+    resultado.innerHTML = frase;
+    resultado.style.display = "block";
+}
+
+function calcularCombustiveis() {
+    const precoEtanol = document.getElementById("txtEtanol").value;
+    const precoGasolina = document.getElementById("txtGasolina").value;
+
+    // Continuar aqui...
+}
