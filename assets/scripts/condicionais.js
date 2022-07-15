@@ -112,3 +112,116 @@ function verificarBeneficioFilhos() {
     resultado.innerHTML = frase;
     resultado.style.display = "block";
 }
+
+function exibirDataDeHoje() {
+    const agora = new Date();
+    var diaDaSemana = agora.getDay();
+    const dia = agora.getDate();
+    var mes = agora.getMonth();
+    const ano = agora.getFullYear();
+
+    const resultado = document.getElementById("resultado");
+    const resultadoSec = document.getElementById("resultado-sec");
+
+    var frase, diasDoMes;
+
+    if (diaDaSemana == 0) {
+        diaDaSemana = "Domingo";
+    }
+    else if (diaDaSemana == 1) {
+        diaDaSemana = "Segunda-Feira";
+    }
+    else if (diaDaSemana == 2) {
+        diaDaSemana = "Terça-Feira";
+    }
+    else if (diaDaSemana == 3) {
+        diaDaSemana = "Quarta-Feira";
+    }
+    else if (diaDaSemana == 4) {
+        diaDaSemana = "Quinta-Feira";
+    }
+    else if (diaDaSemana == 5) {
+        diaDaSemana = "Sexta-Feira";
+    }
+    else if (diaDaSemana == 6) {
+        diaDaSemana = "Sábado";
+    }
+    else {
+        alert("Ocorreu um problema.")
+        diaDaSemana = "";
+    }
+
+    switch (mes) {
+        case 0:
+        case 2:
+        case 4:
+        case 6:
+        case 7:
+        case 9:
+        case 11:
+            diasDoMes = "Mês com 31 dias";
+            break;
+        case 3:
+        case 5:
+        case 8:
+        case 10:
+            diasDoMes = "Mês com 30 dias";
+            break;
+        case 1:
+            diasDoMes = "Mês com 28 ou 29 dias";
+            break;
+        default:
+            alert("Ocorreu um erro.");
+            break;
+    }
+
+    switch (mes) {
+        case 0:
+            mes = "Janeiro";
+            break;
+        case 1:
+            mes = "Fevereiro";
+            break;
+        case 2:
+            mes = "Março";
+            break;
+        case 3:
+            mes = "Abril";
+            break;
+        case 4:
+            mes = "Maio";
+            break;
+        case 5:
+            mes = "Junho";
+            break;
+        case 6:
+            mes = "Julho";
+            break;
+        case 7:
+            mes = "Agosto";
+            break;
+        case 8:
+            mes = "Setembro";
+            break;
+        case 9:
+            mes = "Outubro";
+            break;
+        case 10:
+            mes = "Novembro";
+            break;
+        case 11:
+            mes = "Dezembro";
+            break;
+        default:
+            alert("Ocorreu um problema.");
+            mes = "";
+            break;
+    }
+
+    frase = `<p>${diaDaSemana}, ${dia} de ${mes} de ${ano}.</p>`;
+
+    resultado.innerHTML = frase;
+    resultadoSec.innerHTML = diasDoMes;
+    resultado.style.display = "block";
+    resultadoSec.style.display = "block";
+}
